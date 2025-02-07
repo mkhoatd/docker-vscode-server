@@ -9,7 +9,10 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -
   # clean up
   && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
-ARG VERSION="1.95.3"
+ARG VERSION="1.96.4"
+ENV TUNNEL_ID="tidy-book-tbx0m2m.asse"
+ENV TUNNEL_TOKEN="eyJhbGciOiJFUzI1NiIsImtpZCI6IkZCM0U2NTMwNjlDQ0I5MUFCQUUxRTNFQjk1RDc5NzdERDQxODM1QjYiLCJ0eXAiOiJKV1QifQ.eyJjbHVzdGVySWQiOiJhc3NlIiwidHVubmVsSWQiOiJ0aWR5LWJvb2stdGJ4MG0ybSIsInNjcCI6ImNvbm5lY3QgbWFuYWdlIGhvc3QiLCJleHAiOjE3Mzg5ODE3NTMsImlzcyI6Imh0dHBzOi8vdHVubmVscy5hcGkudmlzdWFsc3R1ZGlvLmNvbS8iLCJuYmYiOjE3Mzg4OTQ0NTN9.1kjyDpEZT9okONEIQsxH3ERoL65T43mqmC8Mmr-i5vaolL2pU12OIn2mOfmrEaSz1eEB1rWtePPjPezag1ziPQ"
+ENV TUNNEL_NAME="nosana"
 
 # install visual studio code
 RUN <<EOF
@@ -27,10 +30,15 @@ RUN <<EOF
 EOF
 
 # entrypoint
-ENTRYPOINT [ "code", "serve-web", "--without-connection-token", "--accept-server-license-terms" ]
+# ENTRYPOINT [ "code", "serve-web", "--without-connection-token", "--accept-server-license-terms" ]
 
 # default arguments
-CMD [ "--host", "0.0.0.0", "--port", "8000", "--cli-data-dir", "/root/.vscode/cli-data", "--user-data-dir", "/root/.vscode/user-data", "--server-data-dir", "/root/.vscode/server-data", "--extensions-dir", "/root/.vscode/extensions" ]
+# CMD [ "--host", "0.0.0.0", "--port", "8000", "--cli-data-dir", "/root/.vscode/cli-data", "--user-data-dir", "/root/.vscode/user-data", "--server-data-dir", "/root/.vscode/server-data", "--extensions-dir", "/root/.vscode/extensions" ]
+
+# ENTRYPOINT [ "code", "tunnel", "--accept-server-license-terms", "--tunnel-id", "${TUNNEL_ID}", "--host-token", "${TUNNEL_TOKEN}" ]
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
 
 HEALTHCHECK NONE
 

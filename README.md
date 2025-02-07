@@ -32,24 +32,20 @@ docker run --rm \
   -v ./user-data:/root/.vscode/user-data \
   -v ./cli-data:/root/.vscode/cli-data \
   -v ./extensions:/root/.vscode/extensions \
-  ahmadnassri/vscode-server:latest
+  mkhoatd/vscode-server:latest
 ```
 
-----
-> Author: [Ahmad Nassri](https://www.ahmadnassri.com/) &bull;
-> Twitter: [@AhmadNassri](https://twitter.com/AhmadNassri)
-
 [license-url]: LICENSE
-[license-img]: https://badgen.net/github/license/ahmadnassri/docker-vscode-server
+[license-img]: https://badgen.net/github/license/mkhoatd/docker-vscode-server
 
-[release-url]: https://github.com/ahmadnassri/docker-vscode-server/releases
-[release-img]: https://badgen.net/github/release/ahmadnassri/docker-vscode-server
+[release-url]: https://github.com/mkhoatd/docker-vscode-server/releases
+[release-img]: https://badgen.net/github/release/mkhoatd/docker-vscode-server
 
-[size-url]: https://hub.docker.com/r/ahmadnassri/vscode-server
-[size-img]: https://badgen.net/docker/size/ahmadnassri/vscode-server?label=image%20size
+[size-url]: https://hub.docker.com/r/mkhoatd/vscode-server
+[size-img]: https://badgen.net/docker/size/mkhoatd/vscode-server?label=image%20size
 
-[docker-url]: https://hub.docker.com/r/ahmadnassri/vscode-server
+[docker-url]: https://hub.docker.com/r/mkhoatd/vscode-server
 [docker-img]: https://badgen.net/badge/icon/docker%20hub?icon=docker&label
 
-[github-url]: https://github.com/users/ahmadnassri/packages/container/package/vscode-server
+[github-url]: https://github.com/mkhoatd/docker-vscode-server/pkgs/container/docker-vscode-server
 [github-img]: https://badgen.net/badge/icon/github%20registry?icon=github&label
