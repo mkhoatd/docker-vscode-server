@@ -41,10 +41,10 @@ docker run --rm \
 [release-url]: https://github.com/mkhoatd/docker-vscode-server/releases
 [release-img]: https://badgen.net/github/release/mkhoatd/docker-vscode-server
 
-[size-url]: https://hub.docker.com/r/mkhoatd/vscode-server
-[size-img]: https://badgen.net/docker/size/mkhoatd/vscode-server?label=image%20size
+[size-url]: https://hub.docker.com/r/mkhoatd/docker-vscode-server
+[size-img]: https://badgen.net/docker/size/mkhoatd/docker-vscode-server?label=image%20size
 
-[docker-url]: https://hub.docker.com/r/mkhoatd/vscode-server
+[docker-url]: https://hub.docker.com/r/mkhoatd/docker-vscode-server
 [docker-img]: https://badgen.net/badge/icon/docker%20hub?icon=docker&label
 
 [github-url]: https://github.com/mkhoatd/docker-vscode-server/pkgs/container/docker-vscode-server
