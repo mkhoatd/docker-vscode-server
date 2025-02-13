@@ -38,7 +38,8 @@ EOF
 # ENTRYPOINT [ "code", "tunnel", "--accept-server-license-terms", "--tunnel-id", "${TUNNEL_ID}", "--host-token", "${TUNNEL_TOKEN}" ]
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["code", "tunnel", "--accept-server-license-terms" ]
+CMD ["--tunnel-id", "${TUNNEL_ID}", "--host-token", "${TUNNEL_TOKEN}" "--name", "${TUNNEL_NAME}"]
 
 HEALTHCHECK NONE
 
